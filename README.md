@@ -20,5 +20,10 @@ pytest
 
 pip install setuptools_scm
 
+git init
+git add .
+git commit -m "initial commit"
+git tag v0.1.0
+
 ```
 

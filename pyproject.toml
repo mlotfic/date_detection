@@ -2,6 +2,33 @@
 requires = ["setuptools>=45", "setuptools_scm[toml]>=6.0"]
 build-backend = "setuptools.build_meta"
 
+[project.optional-dependencies]
+dev = ["pre-commit", "black", "isort", "flake8"]
+
 [tool.setuptools_scm]
 version_scheme = "post-release"
 local_scheme = "node-and-date"
+
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | build
+  | dist
+)/
+'''
+[tool.isort]
+profile = "black"
+line_length = 88
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+
+[tool.flake8]
+max-line-length = 88
+
